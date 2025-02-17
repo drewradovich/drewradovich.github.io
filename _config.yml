@@ -6,10 +6,13 @@
 # --- Required options --- #
 
 # Name of website
-title: My Website
+title: Drew Radovich Website
 
 # Your name to show in the footer
-author: Some Person
+author: Drew Radovich
+
+# Short description of your site
+description: A collection of works including personal and school projects to comprise my professional portfolio.
 
 # --- List of links in the navigation bar --- #
 
@@ -39,15 +42,15 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: c/daattali
+  email: "drew.sradovich@gmail.com"
+#  facebook: deanattali
+  github: drewradovich
+#  twitter: daattali
+#  patreon: DeanAttali
+#  youtube: c/daattali
 #  medium: yourname
 #  reddit: yourname
-#  linkedin: daattali
+  linkedin: drewradovich
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -71,10 +74,10 @@ rss-description: This website is a virtual proof that I'm awesome
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+ # twitter: true
+ # facebook: true
   linkedin: true
-  vk: false
+ # vk: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
@@ -99,16 +102,16 @@ post_search: true
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
+navbar-col: "#219ebc"
+navbar-text-col: "#f1faee"
+navbar-border-col: "#219ebc"
 page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
+text-col: "#000000"
+link-col: "#fb8500"
+hover-col: "#023047"
+footer-col: "#219ebc"
+footer-text-col: "#f1faee"
+footer-link-col: "#fb8500"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
