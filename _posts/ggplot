@@ -1,0 +1,182 @@
+---
+layout: post
+title: Code Through: ggplot2
+subtitle: An introduction to producing visuals in R with ggplot2
+cover-img: /assets/img/ggplot_thumb.png
+thumbnail-img: /assets/img/ggplot_thumb.png
+share-img: /assets/img/ggplot_thumb.png
+tags: [R, ggplot2, codethrough, visual, graph]
+---
+
+# SET GLOBAL KNITR OPTIONS
+
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      fig.width = 10, 
+                      fig.height = 8)
+
+
+
+# LOAD PACKAGES
+
+library(pander)
+library(ggplot2)
+
+```
+
+<br>
+<br>
+
+# Introduction
+
+This code through explores the R Package 'ggplot2' which makes creating stunning visuals with your data simple! Create a wide range of graphs, tables, and charts to help convey your information quickly and in a visually appealing manner.
+
+<br>
+
+## Content Overview
+
+We will walk through the uses of 'ggplot2' for transforming complex data into digestible visuals. I will explain the inputs for 'ggplot2' and the customizable aspects of the package as well as include sample code for creating a plot graph with 'ggplot2' using the built in R data set 'mtcars'.
+
+<br>
+
+## Why You Should Care
+
+'ggplot2' is a powerful package for creating data visualizations within R. Data visualization is an important tool for conveying information to people outside of your data project. This package includes ways to create a variety of visuals including line graphs, plots, bar charts, heat maps, and others, making it a versatile tool to incorporate in your data toolbox.
+
+<br>
+
+## Learning Objectives
+
+1) Understand the basic functions and uses for 'ggplot2'
+2) Learn the different geoms available in the package for creating visuals.
+3) Map your data to the 'aes' function.
+4) Create a basic plot graph using 'ggplot2'.
+
+<br>
+<br>
+
+# Visualizations with ggplot2
+
+First, we need to load the package:
+
+```{r}
+library(ggplot2)
+```
+
+Next lets take a look at our data set. We will be using the built in dataset 'mtcars' which provides data on different car models including make and model, cylinder number, mpg, horsepower, and more.
+
+```{r}
+data(mtcars)
+head(mtcars)
+```
+
+<br>
+
+## Further Exposition
+
+ggplot2 is built upon **The Grammar of Graphics** by Leland Wilkinson, published in 1999. Wilkinson proposed that all visualizations are made up of the same elements:a **data set**, **coordinate system**, and **geoms** - visual representation of data points (Posit, 2024).
+
+For our data set we will use **'mtcars'** as stated previously. For the coordinate system we will stick to the Cartesian coordinates (x,y) and map these to our variables using the function **'aes()'**. As for the **geoms**, there are plenty of options to choose from, but we will be focusing on *'geom_bar', 'geom_point',* and *'geom_line'* to serve as our introduction to visualizing with 'ggplot'.
+
+<br>
+
+## Creating a Bar Chart
+
+Let's take a look at how cylinders compare across all cars. The following code will create a bar graph by counting the occurrences for each cylinder number in our data set.
+
+```{r}
+
+ggplot(data = mtcars,     #assigning our data
+  mapping = aes(x = factor(cyl))) +   #mapping our variables
+  geom_bar()  #choosing our geom
+
+```
+
+<br>
+
+## Creating a Scatterplot
+
+We can also create a scatterplot to compare how two variables interact. Lets take a look at number of cylinders and mpg:
+
+```{r}
+
+ggplot(data = mtcars, #assigning our data
+       mapping = aes(x = factor(cyl), y = mpg)) +  #mapping our variables
+  geom_point()   #choosing our geom
+
+```
+
+<br>
+
+Now we have a basic graph, but we can add even more detail by assigning color to our variables. Here we will color code data points according to cylinder number:
+
+```{r}
+
+ggplot(data = mtcars, #assigning our data
+       mapping = aes(x = factor(cyl), y = mpg, #mapping our variables
+                     color = cyl)) +  #coloring points by group
+  geom_point()   #choosing our geom
+
+```
+
+<br>
+
+Let's take a look at how weight affects gas mileage.
+
+```{r}
+
+ggplot(data = mtcars, #map our data set
+       mapping = aes(x = wt, y = mpg)) + #map our variables
+  geom_point() #choose our geom
+
+```
+Again we can make this data easier to read by introducing color to differentiate number of cylinders.
+
+```{r}
+ggplot(data = mtcars, #map our data set
+       mapping = aes(x = wt, y = mpg, #map our variables
+                     color = cyl)) +  #add color for cyl
+  geom_point() #choose our geom
+```
+Finally, let's add some labels to make our graph more readable.
+
+```{r}
+ggplot(data = mtcars, #map our data set
+       mapping = aes(x = wt, y = mpg, #map our variables
+                     color = cyl)) +  #add color for cyl
+  labs(x = "Vehicle Weight (per 1000lbs)", y = "MPG", title = "Weight vs. MPG") + #add axis labels and title to plot
+  geom_point() #choose our geom
+```
+Congrats! You have now successfully created a basic visualization using ggplot2 in R.
+
+<br> 
+<br>
+
+# Further Resources
+
+If you're curious to learn more about ggplot2 and all the types of visualizations you can create please check out the ggplot2 Cheat Sheet by the Posit Software Community listed below.
+
+<br>
+
+* Resource I [ggplot2 Cheat Sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html#labels-and-legends)
+
+* Resource II [ggplot2](https://ggplot2.tidyverse.org/)
+
+
+<br>
+<br>
+
+# Works Cited
+
+This code through references and cites the following sources:
+
+<br>
+
+* CC BY SA Posit Software, PBC (2024).
+[Cheat Sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html#labels-and-legends)
+
+* H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.. [ggplot2](https://ggplot2.tidyverse.org/)
+
+<br>
+<br>
