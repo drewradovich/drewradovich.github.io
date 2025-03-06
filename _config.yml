@@ -53,13 +53,13 @@ social-network-links:
 #  youtube: c/daattali
 #  medium: yourname
 #  reddit: yourname
-  linkedin: drewradovich
+  linkedin: drew-radovich
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
 #  instagram: deanat78
-#  spotify: yourname
-#  telephone: +14159998888
+  spotify: drewb
+#  telephone: +14259224134
 #  steam: deanat78
 #  twitch: yourname
 #  yelp: yourname
@@ -84,7 +84,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "drewradovich.com"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -99,7 +99,7 @@ feed_show_tags: true
 post_search: true
 
 # The keywords to associate with your website, for SEO purposes
-#keywords: "my,list,of,keywords"
+keywords: "data,analyst,science,github,analysis,R,PowerBI,SQL,student,internship,learning"
 
 # --- Colours / background image --- #
 
