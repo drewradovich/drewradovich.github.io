@@ -1,0 +1,127 @@
+---
+layout: post
+title: Loops in R
+subtitle: A code-through for using loops in R
+cover-img: /assets/img/loops_thumb.png
+thumbnail-img: /assets/img/loops_thumb.png
+share-img: /assets/img/loops_thumb.png
+tags: [R, loops, function, codethrough]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Using Loops in R: Code-Through
+
+## Introduction
+
+Loops are a programming construct that allow us to run a chunk of code multiple times, helping improve efficiency and reduce redundancy in workflow. They are useful for running simulations, automated reporting tasks, and other repetitive actions like iterations and calculations.
+
+In R programming, there are three main types of loops:
+  - `for` loops: Repeats the code for a given number of iterations.
+  - `while` loops: Repeats the code until a condition is met.
+  - `repeat` loops: Similar to `while`, but requires an explicit termination.
+  
+All of these loop functions are part of base R and do not require additional packages to use.
+
+## Common Examples of Looping
+
+### 1. `for` Loops
+
+A `for` loop is used when the number of iterations is predetermined, such as in a vector, list, or sequence.
+
+**Syntax:**
+```{r, eval=FALSE}
+for (variable in sequence) {
+  # execute code here
+}
+```
+
+**Example:**
+```{r}
+# Print numbers from 1 to 5
+for (i in 1:5) {
+  print(i)
+}
+```
+
+### 2. `while` Loops
+
+A `while` loop will execute code for as long as a given condition is `TRUE`. These types of loops are useful when the number of iterations is not known beforehand, such as when performing simulations.
+
+**Syntax:**
+```{r, eval=FALSE}
+while (condition){
+  # execute code here
+}
+```
+
+***Example:***
+```{r}
+i <- 1
+while (i <= 5){
+  print(i)
+  i <- i + 1
+}
+```
+
+### 3. `repeat` Loops
+
+A `repeat` loop runs a chunk of code idefinitely until an explicit `break` statement is encountered. This is helpful when a scenario must be run at least once and the stopping condition is checked inside the loop.
+
+**Syntax:**
+```{r, eval=FALSE}
+repeat{
+  # execute code here
+  if (condition) {
+    break
+  }
+}
+```
+
+**Example:**
+```{r}
+# Print numbers from 1 to 5 using a repeat loop
+x <- 1
+repeat{
+  print(x)
+  x <- x +1
+  if( x > 5){
+    break
+  }
+}
+```
+
+*Note:* `while` and `repeat` loops are very similar in function, but remember that a `repeat` loop requires an explicit `break` command, otherwise it will run indefinitely and this will lead to bugs in your code if not used carefully.
+
+### Jump Statements
+
+Jump statements are used to terminate loops at a particular iteration or skip to another iteration in the loop. There are two main types of jump statements:
+
+- `break` statement: used to terminate the loop at a particular iteration. Most oftened used in `repeat` loops but can also be used in `for` loops.
+- `next` statement: used to skip an iteration of a loop and continue with the next iterations.
+
+**Example:**
+```{r}
+# Skip an iteration in a loop
+for ( i in 1:5 ){
+  # Set condition
+  if ( i == 3 ){
+    next
+  }
+  # Finish for loop
+  print( i )
+}
+```
+
+## Conclusion
+
+Loops are a powerful tool for automating tasks and improving your coding efficiency. Be sure to select the one that works best for your code and remember to include exit clauses when using `repeat` loops.
+
+- Use `for` loops when iterating over a known sequence (e.g.,  numbers 1:5 or days Monday through Friday)
+- Use `while` loops when you want the code to stop after a condition is met (e.g., x > 5 or a slots player runs out of cash, x = 0)
+- Use `repeat` loops when a loop should run at least once and you want to set an explicit end condition.
+
+For more reading, consider:
+R Documentation (`?for`, `?while`, `?repeat`)
+<Geeks for Geeks: Loops in R>[https://www.geeksforgeeks.org/loops-in-r-for-while-repeat/]
